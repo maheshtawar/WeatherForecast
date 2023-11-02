@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <header class="bg-info p-3 mb-5">
+        <h1 class="text-center">Weather Dashboard</h1>
+    </header>
+    <main class="container mb-5">
+        <div class="hidden alert alert-danger" id="alert" role="alert">
+            <!-- alert-->
+        </div>
+
+        <div class="input-group">
+            <input type="text" class="form-control" id="locationInput" placeholder="Enter City Name"
+                aria-label="Recipient's username with two button addons">
+            <button class="btn btn-outline-secondary" id="searchButton" type="button">Search</button>
+            <button class="btn btn-outline-secondary" id="getCurrentLocation" type="button">Use my location</button>
+            <button class="btn btn-outline-secondary" id="addFavorite" type="button">Add to Favorites</button>
+        </div>
+        <div id="autocomplete-dropdown" class="show-case mb-5"></div>
+
+        <div id="loading" class="hidden"></div>
+
+        <div id="weatherInfo" class="hidden">
+            <h1 class="text-center mb-5">Current Day Weather Data</h1>
+            <div class="card w-50 mx-auto text-center mb-5">
+            <div class="card-header">
+                <h2 id="cityHeader"></h2>
+            </div>
+            <div class="card-body"><img src="" alt="" id="cityWeatherIcon">
+                <p id="cityTemperature"></p>
+                <p id="cityHumidity"></p>
+                <p id="cityWindSpeed"></p>
+                <p id="cityDescription"></p>
+                <p id="cityLatLong"></p>
+            </div>
+        </div>
+        </div>
+
+        <div id="weatherContainer" class="hidden">
+            <h1 class="text-center mb-5">5 Day Weather Forecast</h1>
+            <!-- Forecast Carousel -->
+            <div id="carouselExampleDark" class="border border-info p-3 text-center carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner" id="forecastCarousel">
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" ariahidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+    </main>
+<footer class="fixed-bottom mb-2">
+    <div class="row container">
+        <div class="col-auto">© Mahesh Tawar</div>
+    </div>
+</footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
